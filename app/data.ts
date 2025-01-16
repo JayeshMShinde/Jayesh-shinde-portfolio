@@ -1,6 +1,5 @@
 import { 
     Code, 
-    Briefcase, 
     GraduationCap, 
     Award, 
     Mail, 

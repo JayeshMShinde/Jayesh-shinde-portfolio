@@ -5,8 +5,6 @@ import {
   Code,
   Briefcase,
   GraduationCap,
-  Award,
-  Terminal,
   ChevronDown,
 } from "lucide-react";
 import TypeWriter from "./components/TypeWriter";
@@ -15,7 +13,6 @@ import {
   experiences,
   education,
   training,
-  certifications,
   skills,
 } from "./data";
 
@@ -92,7 +89,7 @@ export default function Portfolio() {
         <section className="h-screen flex flex-col items-center justify-center px-4 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up relative">
-            Hi, I'm{" "}
+            Hi, I&#39;m{" "}
             <span className="text-blue-500">
               <TypeWriter
                 words={[personalInfo.name, "Full Stack Developer"]}
@@ -269,7 +266,7 @@ export default function Portfolio() {
               <span className="block h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></span>
             </h2>
             <div className="max-w-xl mx-auto text-center">
-              <p className="text-xl mb-6">Let's work together!</p>
+              <p className="text-xl mb-6">Let&#39;s work together!</p>
               <div className="flex flex-col md:flex-row gap-4 justify-center">
                 <a
                   href={`mailto:${personalInfo.email}`}
