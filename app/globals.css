@@ -21,8 +21,8 @@ body {
 }
 
 .bg-grid-pattern {
-  background-image: linear-gradient(to right, rgb(255 255 255 / 0.1) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgb(255 255 255 / 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.225) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.256) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -64,4 +64,9 @@ body {
 
 .delay-300 {
   animation-delay: 300ms;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
