@@ -3,45 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Fira Code', monospace;
 }
 
+/* Terminal-style grid pattern */
 .bg-grid-pattern {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.225) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.256) 1px, transparent 1px);
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
+/* Animation keyframes */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
 .animate-blink {
-  animation: blink 1.5s ease-in-out infinite;
+  animation: blink 1s infinite;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
-  animation: fadeIn 1.5s ease-out forwards;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 .fade-in {
@@ -49,24 +51,26 @@ body {
   transform: translateY(20px);
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Code highlighting effects */
+.code-highlight {
+  position: relative;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: rgba(59, 130, 246, 0.1);
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.5s ease-out forwards;
+.code-highlight::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: #3b82f6;
 }
 
-.delay-200 {
-  animation-delay: 200ms;
-}
-
-.delay-300 {
-  animation-delay: 300ms;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* Circuit board pattern */
+.circuit-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 2px, transparent 0);
+  background-size: 24px 24px;
 }

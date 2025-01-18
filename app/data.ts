@@ -1,198 +1,146 @@
 import { 
-    Code, 
-    GraduationCap, 
-    Award, 
-    Mail, 
-    Phone, 
-    Linkedin, 
-    MapPin,
-    BookOpen,
-    Binary,
-    Database,
-    Github,
-    Layout,
-    Terminal,
-    Globe,
-    Server,
-    LucideIcon
-  } from 'lucide-react';
-  
-  export interface Experience {
-    title: string;
-    company: string;
-    period: string;
-    location: string;
-    icon?: LucideIcon;
-  }
-  
-  export interface Training {
-    title: string;
-    organization: string;
-    period: string;
-    points: string[];
-    icon?: LucideIcon;
-  }
-  
-  export interface Education {
-    degree: string;
-    details: string;
-    institution: string;
-    location: string;
-    year: string;
-    score?: string;
-    icon?: LucideIcon;
-  }
-  
-  export interface Certification {
-    title: string;
-    organization: string;
-    year: string;
-    icon?: LucideIcon;
-  }
-  
-  export interface Skill {
-    name: string;
-    icon: LucideIcon;
-    color: string;
-  }
-  
-  export interface ContactInfo {
-    type: string;
-    value: string;
-    icon: LucideIcon;
-    link: string;
-  }
-  
-  export const personalInfo = {
-    name: "Jayesh Mahendra Shinde",
-    location: "Valsad, India",
-    email: "Jayesh4178@gmail.com",
-    phone: "9975154178",
-    linkedin: "www.linkedin.com/in/jayesh-mahendra-shinde",
-    summary: "Crafting digital experiences through code | Full Stack Developer specialized in building scalable web applications. Ready to bring innovative solutions to a dynamic organization",
-    contactInfo: [
-      {
-        type: "Email",
-        value: "Jayesh4178@gmail.com",
-        icon: Mail,
-        link: "mailto:Jayesh4178@gmail.com"
-      },
-      {
-        type: "Phone",
-        value: "9975154178",
-        icon: Phone,
-        link: "tel:9975154178"
-      },
-      {
-        type: "LinkedIn",
-        value: "Jayesh Mahendra Shinde",
-        icon: Linkedin,
-        link: "https://www.linkedin.com/in/jayesh-mahendra-shinde"
-      },
-      {
-        type: "Location",
-        value: "Valsad, India",
-        icon: MapPin,
-        link: "#"
-      }
+  Code, 
+  Database, 
+  Github, 
+  Server, 
+  Layout,
+  Languages,
+  Brain,
+} from 'lucide-react';
+
+export const personalInfo = {
+  name: "Jayesh Shinde",
+  email: "jayesh4178@gmail.com",
+  phone: "+91 9975154178",
+  location: "Vapi, Gujarat",
+  github: "https://github.com/JayeshMShinde", // Add your GitHub URL
+  linkedin: "https://linkedin.com/in/jayesh-mahendra-shinde", // Add your LinkedIn URL
+  summary: "Crafting digital experiences through code | Full Stack Developer specialized in building scalable web applications. Ready to bring innovative solutions to a dynamic organization"
+};
+
+export const experiences = [
+  {
+    title: "Python Full Stack Developer",
+    company: "Xira Infotech",
+    location: "Vapi",
+    period: "Sept 2023 - Present",
+    responsibilities: [
+      "Developed and maintained web applications using Python, Django frameworks",
+      "Designed and implemented RESTful APIs for front-end and back-end communication",
+      "Implemented responsive front-end designs using HTML, CSS, JavaScript, and TypeScript",
+      "Optimized application performance through code refactoring and database optimization",
+      "Utilized Git for code management and collaboration",
+      "Integrated third-party APIs including Razorpay and Delhivery"
     ]
-  };
-  
-  export const experiences: Experience[] = [
-    {
-      title: "Python Full Stack Developer",
-      company: "Xira Infotech",
-      period: "September 2023 - Present",
-      location: "Vapi",
-      icon: Code
-    },
-    {
-      title: "Java Full Stack Developer Intern",
-      company: "CIIT Training Institute",
-      period: "December 2022 - May 2023",
-      location: "Pune, Maharashtra",
-      icon: Terminal
-    }
-  ];
-  
-  export const education: Education[] = [
-    {
-      degree: "B. Tech in Computer Science and Engineering",
-      details: "Minor in Business Analytics and Optimization",
-      institution: "School of Computer Science and Engineering, Sandip University",
-      location: "Nashik, Maharashtra",
-      year: "2022",
-      score: "8.71",
-      icon: GraduationCap
-    },
-    {
-      degree: "Diploma in Information Technology",
-      details: "",
-      institution: "Sandip Polytechnic, Sandip Foundation",
-      location: "Nashik, Maharashtra",
-      year: "2019",
-      score: "7.69",
-      icon: BookOpen
-    },
-    {
-      degree: "10th (SSC)",
-      details: "",
-      institution: "St. Francis's High School",
-      location: "Vapi, Gujarat",
-      year: "2016",
-      score: "",
-      icon: BookOpen
-    }
-  ];
-  
-  export const training: Training[] = [
-    {
-      title: "Exam Portal",
-      organization: "CIIT Training Institute",
-      period: "December 2022 - May 2023",
-      points: [
-        "Implemented Exam Portal system for student exams and result access",
-        "Designed user-friendly interface for students and administrators",
-        "Managed student records and exam questions collaboratively"
-      ],
-      icon: Layout
-    },
-    {
-      title: "GUI Based Data Visualization Software",
-      organization: "Sandip University",
-      period: "July 2021 - April 2022",
-      points: [
-        "Developed Data Visualization program using Exploratory Data Analysis (EDA) techniques",
-        "Created user-friendly GUI application for data exploration and visualization",
-        "Plotted graphs to communicate data patterns and trends",
-        "Integrated Predefined/Built-in Machine Learning (ML) Algorithm"
-      ],
-      icon: Binary
-    }
-  ];
-  
-  export const certifications: Certification[] = [
-    {
-      title: "Java Full Stack Developer",
-      organization: "CIIT Institute",
-      year: "2023",
-      icon: Award
-    }
-  ];
-  
-  export const skills: Skill[] = [
-    { name: "HTML", icon: Layout, color: "text-orange-400" },
-    { name: "CSS", icon: Layout, color: "text-blue-400" },
-    { name: "Bootstrap", icon: Layout, color: "text-purple-400" },
-    { name: "Tailwind CSS", icon: Layout, color: "text-cyan-400" },
-    { name: "JavaScript", icon: Binary, color: "text-yellow-400" },
-    { name: "TypeScript", icon: Binary, color: "text-blue-400" },
-    { name: "Python", icon: Code, color: "text-green-400" },
-    { name: "Java", icon: Code, color: "text-red-400" },
-    { name: "SQL/PLSQL", icon: Database, color: "text-blue-400" },
-    { name: "Git", icon: Github, color: "text-orange-400" },
-    { name: "Django", icon: Server, color: "text-green-400" },
-    { name: "React.js", icon: Code, color: "text-cyan-400" },
-    { name: "Next.js", icon: Globe, color: "text-gray-400" },
-    { name: "Spring Boot", icon: Server, color: "text-green-400" }
-  ];
+  }
+];
+
+export const education = [
+  {
+    degree: "B.tech in Computer Science and Engineering",
+    institution: "Sandip University",
+    location: "Nashik",
+    year: "2019 - 2022"
+  },
+  {
+    degree: "Diploma in Information Technology",
+    institution: "Sandip Polytechnic",
+    location: "Nashik",
+    year: "2016 - 2019"
+  }
+];
+
+export const training = [
+  {
+    title: "Learning Management System (LMS)",
+    organization: "Academic Project",
+    period: "Dec 2022 - May 2023",
+    points: [
+      "Developed a Learning Management System with admin and student interfaces",
+      "Enabled student registration, password management via email, and secure login",
+      "Integrated features for students to take exams and view results",
+      "Technologies used: Java, HTML, CSS, Reactjs"
+    ]
+  },
+  {
+    title: "Data Visualization with ML Integration",
+    organization: "Academic Project",
+    period: "Dec 2021 - Mar 2022",
+    points: [
+      "Developed a Data Visualization program using Exploratory Data Analysis (EDA)",
+      "Implemented GUI application with built-in Machine Learning algorithm",
+      "Technologies used: Python"
+    ]
+  },
+  {
+    title: "Klippie-GPT AI Video Creation Tool",
+    organization: "Freelance Project",
+    period: "Aug 2024 - Sept 2024",
+    points: [
+      "Designed responsive web interface for AI-powered video creation platform",
+      "Developed real-time collaboration features using WebSocket",
+      "Created functionalities for chat regeneration and content management",
+      "Technologies used: Next.js, React, Tailwind CSS, WebSocket, Shadcn UI, Mantine Dev UI"
+    ]
+  }
+];
+
+export const skills = [
+  {
+    name: "Frontend Development",
+    icon: Layout,
+    color: "text-blue-400",
+    technologies: ["HTML5", "CSS3", "React.js", "Next.js", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    name: "Backend Development",
+    icon: Server,
+    color: "text-green-400",
+    technologies: ["Python", "Django", "Java", "Spring Boot", "RESTful APIs"]
+  },
+  {
+    name: "Databases",
+    icon: Database,
+    color: "text-yellow-400",
+    technologies: ["MySQL", "PostgreSQL", "Django ORM"]
+  },
+  {
+    name: "Version Control",
+    icon: Github,
+    color: "text-orange-400",
+    technologies: ["Git", "GitHub", "GitLab"]
+  },
+  {
+    name: "Tools & Platforms",
+    icon: Code,
+    color: "text-purple-400",
+    technologies: ["WebSocket", "Shadcn UI", "Mantine Dev UI", "Docker", "Jira"]
+  },
+  {
+    name: "Languages",
+    icon: Languages,
+    color: "text-pink-400",
+    technologies: ["English", "Hindi", "Marathi", "Gujarati"]
+  },
+  {
+    name: "Soft Skills",
+    icon: Brain,
+    color: "text-indigo-400",
+    technologies: ["Quick learner", "Team player", "Problem-solving", "Communication"]
+  }
+];
+
+export const certifications = [
+  {
+    title: "Java Full Stack Developer",
+    organization: "CIIT Training Institute",
+    year: "2023"
+  }
+];
+
+export const languages = [
+  "English",
+  "Hindi",
+  "Marathi",
+  "Gujarati"
+];
