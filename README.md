@@ -117,10 +117,6 @@ Deploy your portfolio using platforms like:
 - Netlify
 - GitHub Pages
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## 🤝 Contributing
 
 1. Fork the repository
