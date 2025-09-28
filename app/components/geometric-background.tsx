@@ -15,7 +15,7 @@ interface Shape {
 
 export function GeometricBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number | undefined>()
+  const animationRef = useRef<number | undefined>(undefined)
   const shapesRef = useRef<Shape[]>([])
 
   useEffect(() => {

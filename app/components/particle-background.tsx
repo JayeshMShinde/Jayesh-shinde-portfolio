@@ -14,7 +14,7 @@ export function ParticleBackground() {
     // Optional callback
   }, [])
 
-  const particlesError = useCallback((error: any) => {
+  const particlesError = useCallback((error: Error) => {
     console.warn('Particles error:', error)
   }, [])
 
