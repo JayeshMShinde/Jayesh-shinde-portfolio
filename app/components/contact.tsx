@@ -38,7 +38,7 @@ export function Contact() {
           description="Ready to collaborate? I'd love to hear from you"
         />
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -86,14 +86,14 @@ export function Contact() {
 
                 <div className="pt-6 border-t border-border">
                   <p className="font-medium mb-4">Connect with me</p>
-                  <div className="flex gap-3">
-                    <Button variant="outline" size="sm" asChild>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button variant="outline" size="sm" asChild className="min-h-[44px]">
                       <a href={personalInfo.github} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-2" />
                         GitHub
                       </a>
                     </Button>
-                    <Button variant="outline" size="sm" asChild>
+                    <Button variant="outline" size="sm" asChild className="min-h-[44px]">
                       <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer">
                         <Linkedin className="w-4 h-4 mr-2" />
                         LinkedIn
@@ -129,7 +129,7 @@ export function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent min-h-[44px] text-base"
                       placeholder="Your name"
                     />
                   </div>
@@ -145,7 +145,7 @@ export function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+                      className="w-full px-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent min-h-[44px] text-base"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -161,12 +161,12 @@ export function Contact() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none"
+                      className="w-full px-3 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none text-base"
                       placeholder="Tell me about your project or just say hello!"
                     />
                   </div>
 
-                  <Button type="submit" className="w-full">
+                  <Button type="submit" className="w-full min-h-[44px]">
                     <Send className="w-4 h-4 mr-2" />
                     Send Message
                   </Button>

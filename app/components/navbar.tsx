@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Button } from "@/app/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/app/components/ui/sheet"
 import { ThemeToggle } from "@/app/components/theme-toggle"
 import { Container } from "@/app/components/container"
 import { cn } from "@/app/lib/utils"
@@ -20,7 +21,7 @@ const navItems = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +48,7 @@ export function Navbar() {
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-    setMobileMenuOpen(false)
+    setOpen(false)
   }
 
   return (
@@ -85,41 +86,43 @@ export function Navbar() {
             <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu */}
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <nav className="flex flex-col gap-4">
+                  <div className="px-2 py-4">
+                    <h2 className="text-lg font-semibold">Navigation</h2>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    {navItems.map((item) => (
+                      <Button
+                        key={item.id}
+                        variant="ghost"
+                        onClick={() => scrollToSection(item.id)}
+                        className={cn(
+                          "w-full justify-start text-base font-medium h-12",
+                          activeSection === item.id
+                            ? "text-primary bg-primary/10"
+                            : "text-muted-foreground hover:text-foreground"
+                        )}
+                      >
+                        {item.label}
+                      </Button>
+                    ))}
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
-            <div className="py-4 space-y-2">
-              {navItems.map((item) => (
-                <Button
-                  key={item.id}
-                  variant="ghost"
-                  onClick={() => scrollToSection(item.id)}
-                  className={cn(
-                    "w-full justify-start text-sm font-medium",
-                    activeSection === item.id
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground"
-                  )}
-                >
-                  {item.label}
-                </Button>
-              ))}
-            </div>
-          </div>
-        )}
       </Container>
     </nav>
   )

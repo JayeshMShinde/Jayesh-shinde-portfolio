@@ -24,7 +24,7 @@ export function About() {
           description="Passionate about transforming data into insights and building scalable solutions"
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -32,8 +32,8 @@ export function About() {
             viewport={{ once: true }}
           >
             <Card className="h-full">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-6">Get to Know Me</h3>
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Get to Know Me</h3>
                 <div className="prose prose-gray dark:prose-invert max-w-none">
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     {about.description}
@@ -41,7 +41,7 @@ export function About() {
                 </div>
                 
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-lg mb-4">What I Do Best</h4>
+                  <h4 className="font-semibold text-base sm:text-lg mb-4">What I Do Best</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {highlights.map((highlight, index) => (
                       <div key={index} className="flex items-center gap-2">
@@ -62,8 +62,8 @@ export function About() {
             viewport={{ once: true }}
           >
             <Card className="h-full">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-6">Quick Facts</h3>
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Quick Facts</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">

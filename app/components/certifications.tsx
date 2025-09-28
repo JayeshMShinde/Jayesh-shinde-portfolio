@@ -18,7 +18,7 @@ export function Certifications() {
           description="Professional certifications and achievements"
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
@@ -34,7 +34,7 @@ export function Certifications() {
                       <Award className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-lg mb-2">{cert.title}</h3>
+                      <h3 className="font-semibold text-base sm:text-lg mb-2">{cert.title}</h3>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Building className="w-4 h-4" />

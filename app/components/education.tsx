@@ -17,7 +17,7 @@ export function Education() {
           description="My academic background and qualifications"
         />
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {education.map((edu, index) => (
             <motion.div
               key={index}
@@ -27,14 +27,14 @@ export function Education() {
               viewport={{ once: true }}
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8">
+                <CardContent className="p-6 sm:p-8">
                   <div className="flex items-start gap-4 mb-6">
                     <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
                       <GraduationCap className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{edu.degree}</h3>
-                      <p className="text-lg font-medium text-purple-600 dark:text-purple-400 mb-3">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2">{edu.degree}</h3>
+                      <p className="text-base sm:text-lg font-medium text-purple-600 dark:text-purple-400 mb-3">
                         {edu.institution}
                       </p>
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-muted-foreground">

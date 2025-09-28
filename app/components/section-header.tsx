@@ -16,13 +16,13 @@ export function SectionHeader({ title, description, className }: SectionHeaderPr
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className={cn("text-center mb-12", className)}
+      className={cn("text-center mb-8 sm:mb-12 px-4", className)}
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           {description}
         </p>
       )}
