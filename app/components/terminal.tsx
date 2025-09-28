@@ -2,9 +2,8 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Terminal as TerminalIcon, X, Minimize2, Maximize2 } from "lucide-react"
+import { Terminal as TerminalIcon, X, Minimize2 } from "lucide-react"
 import { terminalCommands, easterEggs, asciiArt } from "@/app/components/terminal-commands"
-import { Typewriter } from "@/app/components/typewriter"
 
 interface Command {
   input: string
@@ -62,7 +61,7 @@ export function Terminal() {
     }
   }
   
-  const availableCommands = Object.keys(allCommands).filter(cmd => cmd !== 'clear')
+  // const availableCommands = Object.keys(allCommands).filter(cmd => cmd !== 'clear')
 
   const executeCommand = (cmd: string) => {
     const trimmedCmd = cmd.trim().toLowerCase()

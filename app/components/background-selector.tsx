@@ -11,7 +11,8 @@ import { ParticleBackground } from "./particle-background"
 type BackgroundType = 'particles' | 'dots' | 'neural' | 'geometric' | 'matrix' | 'gradient' | 'none'
 
 export function BackgroundSelector() {
-  const [activeBackground, setActiveBackground] = useState<BackgroundType>('particles')
+  const [activeBackground] = useState<BackgroundType>('particles')
+  // const setActiveBackground = useState<BackgroundType>('particles')[1] // Uncomment if needed
 
   const renderBackground = () => {
     switch (activeBackground) {

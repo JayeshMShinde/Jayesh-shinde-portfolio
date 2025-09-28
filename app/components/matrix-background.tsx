@@ -59,7 +59,7 @@ export function MatrixBackground() {
       
       const drops = dropsRef.current
       
-      drops.forEach((drop, index) => {
+      drops.forEach((drop) => {
         // Update position
         drop.y += drop.speed
         
