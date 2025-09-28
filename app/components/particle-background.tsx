@@ -14,11 +14,16 @@ export function ParticleBackground() {
     // Optional callback
   }, [])
 
+  const particlesError = useCallback((error: any) => {
+    console.warn('Particles error:', error)
+  }, [])
+
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
+      error={particlesError}
       className="fixed inset-0 z-0"
       options={{
         background: {
