@@ -110,14 +110,32 @@ export function Projects() {
                           )}
 
                           <div className="flex flex-col sm:flex-row gap-2 pt-4">
-                            <Button size="sm" variant="outline" className="flex-1 min-h-[44px]">
-                              <Github className="w-4 h-4 mr-2" />
-                              Code
-                            </Button>
-                            <Button size="sm" variant="outline" className="flex-1 min-h-[44px]">
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Demo
-                            </Button>
+                            {project.github_url ? (
+                              <a href={project.github_url} target="_blank" rel="noopener noreferrer" className="flex-1">
+                                <Button size="sm" variant="outline" className="w-full min-h-[44px]">
+                                  <Github className="w-4 h-4 mr-2" />
+                                  Code
+                                </Button>
+                              </a>
+                            ) : (
+                              <Button size="sm" variant="outline" className="flex-1 min-h-[44px]" disabled>
+                                <Github className="w-4 h-4 mr-2" />
+                                Code
+                              </Button>
+                            )}
+                            {project.url ? (
+                              <a href={project.url} target="_blank" rel="noopener noreferrer" className="flex-1">
+                                <Button size="sm" variant="outline" className="w-full min-h-[44px]">
+                                  <ExternalLink className="w-4 h-4 mr-2" />
+                                  Demo
+                                </Button>
+                              </a>
+                            ) : (
+                              <Button size="sm" variant="outline" className="flex-1 min-h-[44px]" disabled>
+                                <ExternalLink className="w-4 h-4 mr-2" />
+                                Demo
+                              </Button>
+                            )}
                           </div>
                         </CardContent>
                       </Card>

@@ -1,3 +1,4 @@
+// import { url } from 'inspector';
 import {
   Code,
   Database,
@@ -91,7 +92,9 @@ export const training = [
       "Built a data visualization program leveraging EDA",
       "Implemented a GUI app with a built-in ML algorithm",
       "Technologies used: Python, Pandas, Matplotlib, Scikit-learn"
-    ]
+    ],
+    url: "",
+    github_url: "https://github.com/JayeshMShinde/gui_data_vis"
   },
   {
     title: "Klippie-GPT — AI Video Creation Tool",
@@ -102,10 +105,12 @@ export const training = [
       "Developed real-time collaboration via WebSocket for chat and live feedback",
       "Added chat regeneration, archiving, and content management",
       "Technologies used: Next.js, React, Tailwind CSS, WebSocket, Shadcn UI, Mantine Dev UI"
-    ]
+    ],
+    url: "",
+    github_url: ""
   },
   {
-    title: "E-Commerce Platform",
+    title: "E-Commerce Platform - Mishu Mattress",
     organization: "Xira Infotech",
     period: "Jan 2024 - May 2024",
     points: [
@@ -113,29 +118,9 @@ export const training = [
       "Implemented user authentication, product catalog, and order management",
       "Integrated Razorpay for secure payment processing",
       "Technologies used: Django, React, PostgreSQL, Razorpay API"
-    ]
-  },
-  {
-    title: "Real-Time Analytics Dashboard",
-    organization: "Infosys",
-    period: "Nov 2024 - Present",
-    points: [
-      "Developed interactive dashboard for real-time data monitoring",
-      "Implemented automated data refresh and alert systems",
-      "Optimized SQL queries for sub-second response times",
-      "Technologies used: Qlik Sense, Snowflake, SQL, JavaScript"
-    ]
-  },
-  {
-    title: "Task Management System",
-    organization: "Personal Project",
-    period: "Jun 2023 - Aug 2023",
-    points: [
-      "Created collaborative task management application",
-      "Implemented drag-and-drop functionality and real-time updates",
-      "Added team collaboration features and progress tracking",
-      "Technologies used: React, Node.js, MongoDB, Socket.io"
-    ]
+    ],
+    url: "https://mishumattress.com/",
+    github_url: ""
   },
   {
     title: "Portfolio Website",
@@ -146,7 +131,9 @@ export const training = [
       "Implemented interactive terminal interface and smooth animations",
       "Optimized for mobile devices and accessibility",
       "Technologies used: Next.js, TypeScript, Tailwind CSS, Framer Motion"
-    ]
+    ],
+    url: "https://jayesh-shinde-portfolio.vercel.app/",
+    github_url: "https://github.com/JayeshMShinde/Jayesh-shinde-portfolio",
   }
 ];
 
