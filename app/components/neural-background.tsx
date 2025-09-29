@@ -22,7 +22,7 @@ interface Connection {
 
 export function NeuralBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | undefined>(undefined)
   const particlesRef = useRef<Particle[]>([])
   const connectionsRef = useRef<Connection[]>([])
 

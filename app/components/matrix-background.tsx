@@ -12,7 +12,7 @@ interface Drop {
 
 export function MatrixBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | undefined>(undefined)
   const dropsRef = useRef<Drop[]>([])
 
   useEffect(() => {
