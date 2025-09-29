@@ -53,7 +53,7 @@ export function Terminal() {
     },
     gui: () => {
       setIsOpen(false)
-      return terminalCommands.gui()
+      return ["Switching to GUI mode...", "Terminal closed."]
     },
     exit: () => {
       setIsOpen(false)
