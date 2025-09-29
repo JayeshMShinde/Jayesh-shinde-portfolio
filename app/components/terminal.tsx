@@ -219,7 +219,7 @@ export function Terminal() {
                   {history.length === 0 && (
                     <div className="mb-4">
                       {welcomeMessage.map((line, index) => (
-                        <div key={index} className="mb-1">
+                        <div key={index} className="mb-1 whitespace-pre">
                           {line}
                         </div>
                       ))}
@@ -260,7 +260,7 @@ export function Terminal() {
                           return (
                             <div 
                               key={lineIndex} 
-                              className="text-gray-200 leading-relaxed hover:text-white transition-colors"
+                              className="text-gray-200 leading-relaxed hover:text-white transition-colors whitespace-pre"
                               dangerouslySetInnerHTML={{ __html: coloredLine }}
                             />
                           )
