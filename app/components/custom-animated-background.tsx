@@ -92,7 +92,7 @@ export function CustomAnimatedBackground() {
         this.rotation = 0
         this.rotationSpeed = (Math.random() - 0.5) * 0.02
         this.size = Math.random() * 20 + 10
-        this.type = ['triangle', 'square', 'hexagon'][Math.floor(Math.random() * 3)] as any
+        this.type = ['triangle', 'square', 'hexagon'][Math.floor(Math.random() * 3)] as 'triangle' | 'square' | 'hexagon'
         this.color = `hsl(${Math.random() * 60 + 180}, 60%, 70%)`
         this.alpha = Math.random() * 0.1 + 0.05
       }
