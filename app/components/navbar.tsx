@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Menu } from "lucide-react"
+import { motion } from "framer-motion"
 import { Button } from "@/app/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/app/components/ui/sheet"
 import { ThemeToggle } from "@/app/components/theme-toggle"
@@ -53,69 +54,85 @@ export function Navbar() {
 
   return (
     <nav className={cn(
-      "fixed top-0 w-full z-50 transition-all duration-300",
+      "fixed top-0 w-full z-50 transition-all duration-500 backdrop-blur-md",
       isScrolled 
-        ? "bg-background/80 backdrop-blur-md border-b border-border" 
+        ? "bg-background/90 shadow-lg shadow-black/5 border-b border-border/50" 
         : "bg-transparent"
     )}>
       <Container>
-        <div className="flex items-center justify-between h-16">
-          <div className="font-bold text-xl">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <div className="flex items-center justify-between h-16 lg:h-18">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="font-bold text-xl lg:text-2xl cursor-pointer"
+          >
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 transition-all duration-300">
               Jayesh
             </span>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => (
-              <Button
+              <motion.div
                 key={item.id}
-                variant="ghost"
-                onClick={() => scrollToSection(item.id)}
-                className={cn(
-                  "text-sm font-medium transition-colors",
-                  activeSection === item.id
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {item.label}
-              </Button>
+                <Button
+                  variant="ghost"
+                  onClick={() => scrollToSection(item.id)}
+                  className={cn(
+                    "text-sm font-medium transition-all duration-300 px-4 py-2 rounded-lg",
+                    activeSection === item.id
+                      ? "text-primary bg-primary/10 shadow-md"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  )}
+                >
+                  {item.label}
+                </Button>
+              </motion.div>
             ))}
             <ThemeToggle />
           </div>
 
           {/* Mobile Menu */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-3">
             <ThemeToggle />
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
+                <Button variant="ghost" size="icon" className="lg:hidden hover:bg-muted/50 transition-colors">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col gap-4">
-                  <div className="px-2 py-4">
-                    <h2 className="text-lg font-semibold">Navigation</h2>
+              <SheetContent side="right" className="w-[280px] sm:w-[350px] bg-background/95 backdrop-blur-xl border-l border-border/50">
+                <nav className="flex flex-col gap-6 mt-6">
+                  <div className="px-2">
+                    <h2 className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      Navigation
+                    </h2>
                   </div>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-3">
                     {navItems.map((item) => (
-                      <Button
+                      <motion.div
                         key={item.id}
-                        variant="ghost"
-                        onClick={() => scrollToSection(item.id)}
-                        className={cn(
-                          "w-full justify-start text-base font-medium h-12",
-                          activeSection === item.id
-                            ? "text-primary bg-primary/10"
-                            : "text-muted-foreground hover:text-foreground"
-                        )}
+                        whileHover={{ scale: 1.02, x: 5 }}
+                        whileTap={{ scale: 0.98 }}
                       >
-                        {item.label}
-                      </Button>
+                        <Button
+                          variant="ghost"
+                          onClick={() => scrollToSection(item.id)}
+                          className={cn(
+                            "w-full justify-start text-base font-medium h-12 px-4 rounded-lg transition-all duration-300",
+                            activeSection === item.id
+                              ? "text-primary bg-primary/10 shadow-md border-l-4 border-primary"
+                              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                          )}
+                        >
+                          {item.label}
+                        </Button>
+                      </motion.div>
                     ))}
                   </div>
                 </nav>

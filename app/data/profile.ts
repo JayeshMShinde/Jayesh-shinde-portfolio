@@ -134,6 +134,20 @@ export const training = [
     ],
     url: "https://jayesh-shinde-portfolio.vercel.app/",
     github_url: "https://github.com/JayeshMShinde/Jayesh-shinde-portfolio",
+  },
+  {
+    title: "MindSwitch - AI Chat Interface",
+    organization: "Personal Project",
+    period: "2024 - Present",
+    points: [
+      "Production-ready multi-model AI chat interface supporting 40+ AI models via OpenRouter",
+      "Enterprise-grade security with zero client-side API keys and advanced rate limiting",
+      "Real-time streaming chat with responsive design and image generation capabilities",
+      "Built with Next.js 14, TypeScript, Tailwind CSS, Clerk authentication, and Vercel deployment",
+      "Technologies used: Next.js, TypeScript, Tailwind CSS, OpenRouter API, Clerk, Sentry, Vercel"
+    ],
+    url: "https://mindswitch.vercel.app/",
+    github_url: "https://github.com/JayeshMShinde/mindswitch"
   }
 ];
 

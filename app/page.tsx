@@ -1,6 +1,7 @@
 import { Navbar } from "@/app/components/navbar"
 import { Hero } from "@/app/components/hero"
 import { About } from "@/app/components/about"
+import { Stats } from "@/app/components/stats"
 import { Experience } from "@/app/components/experience"
 import { Education } from "@/app/components/education"
 import { Projects } from "@/app/components/projects"
@@ -20,6 +21,7 @@ export default function Portfolio() {
       <main>
         <Hero />
         <About />
+        <Stats />
         <Experience />
         <Education />
         <Projects />
